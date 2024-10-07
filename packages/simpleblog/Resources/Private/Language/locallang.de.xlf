@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2023-06-16T00:00:00Z" product-name="simpleblog">
+    <body>
+      <trans-unit id="flashmessage.blog.blog-created.headline">
+         <source>Blog created</source>
+        <target>Blog erstellt</target>
+      </trans-unit>
+      <trans-unit id="flashmessage.blog.blog-created.body">
+        <source>Thanks! A new Blog has been created successfully.</source>
+        <target>Vielen Dank! Der neue Blog wurde erfolgreich erstellt.</target>
+      </trans-unit>
+
+      <trans-unit id="blog.list.button.add-blogs">
+  <source>Add Blogs</source>
+  <target>Blogs hinzufügen</target>
+</trans-unit>
+
+    </body>
+  </file>
+</xliff>

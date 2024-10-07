@@ -1,0 +1,27 @@
+<?php
+namespace ExtbaseBook\Simpleblog\ViewHelpers;
+
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
+class EmailObfuscatorViewHelper extends AbstractViewHelper
+{
+    /**
+     * Initialize arguments.
+     */
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('email', 'string', 'The email address to obfuscate', true);
+    }
+
+    /**
+     * Render the obfuscated email.
+     *
+     * @return string Rendered string
+     */
+    public function render(): string
+    {
+        $email = $this->arguments['email'];
+        return str_replace('@', ' [at] ', htmlspecialchars($email));
+    }
+}

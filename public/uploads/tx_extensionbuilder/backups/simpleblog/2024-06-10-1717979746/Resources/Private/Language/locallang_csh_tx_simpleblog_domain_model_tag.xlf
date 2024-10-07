@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2024-06-10T00:35:41Z" product-name="simpleblog">
+		<header/>
+		<body>
+			<trans-unit id="tagvalue.description">
+				<source>Tag</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
