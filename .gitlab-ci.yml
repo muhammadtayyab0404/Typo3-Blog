@@ -1,0 +1,49 @@
+image: php:8.0
+
+# Define stages for the CI/CD pipeline
+stages:
+  - setup
+  - build
+  - test
+
+# Setup the environment for DDEV
+before_script:
+  - apt-get update && apt-get install -y git unzip
+  - curl -sSL https://get.ddev.site | bash
+  - ddev pull
+  - ddev start
+
+# Install Composer dependencies
+install_dependencies:
+  stage: setup
+  script:
+    - ddev composer install
+  only:
+    - main
+
+# Build the project (run TYPO3 commands)
+build:
+  stage: build
+  script:
+    - ddev typo3cms database:migrate
+    - ddev typo3cms install:setup
+  only:
+    - main
+
+# Run tests (you can define your test command here)
+test:
+  stage: test
+  script:
+    - ddev typo3cms test
+  only:
+    - main
+
+# Optionally define deployment steps if applicable
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to production..."
+    # Add your deployment commands here (e.g., rsync, scp, etc.)
+  only:
+    - main
+
